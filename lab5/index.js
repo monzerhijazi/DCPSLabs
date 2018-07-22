@@ -1,9 +1,11 @@
 const express = require('express');
 var bodyParser = require('body-parser')
+var morgan = require('morgan')
 
 /** EXPRESS SETUP start */
 const app = express();
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+app.use(morgan('combined'));
 /** EXPRESS SETUP end */
 
 // routes... add more below
