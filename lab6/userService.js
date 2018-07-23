@@ -11,6 +11,7 @@ const users = [
 
 module.exports = {
     getUsers(cb) {
+        cb = cb || function() {};
         return new Promise((res, rej) => {
             var usersClone = _.cloneDeep(users);
             setTimeout(() => {
@@ -20,6 +21,7 @@ module.exports = {
         });
     },
     getUserByID(id, cb) {
+        cb = cb || function() {};
         return new Promise((res, rej) => {
             if(typeof id !== 'number') {
                 return setTimeout(() => {
@@ -42,6 +44,7 @@ module.exports = {
         });
     },
     addUser(user, cb) {
+        cb = cb || function() {};
         return new Promise((res, rej) => {
             var largestID = 0;
             users.forEach(u => {
@@ -56,4 +59,4 @@ module.exports = {
             });
         });
     }
-} 
+}
