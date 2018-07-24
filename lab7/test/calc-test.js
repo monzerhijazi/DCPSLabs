@@ -1,6 +1,7 @@
 
 var expect = require('chai').expect;
 var calc = require('../calc');
+var sinon = require('sinon');
 
 describe('calc-tests', function() {
   describe('add', function() {
